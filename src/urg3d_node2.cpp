@@ -579,6 +579,8 @@ void Urg3dNode2::scan_thread()
                 }
             }
             else{
+                rclcpp::sleep_for(5ms);
+
                 rclcpp::Time current_time = system_clock.now();
                 rclcpp::Duration period = current_time - prev_check_time;
                 if (period.seconds() >= error_check_period) {
